@@ -1,12 +1,7 @@
 def solution(A):
-    ans = 1
-    B = list(set(sorted(A)))
-    for i, b in enumerate(B):
-        if i + 1 == b:
-            pass
-        else:
-            ans = i+1
-            break
-    else:
-        ans = len(B)+1
-    return ans
+    B = [0]*(10**6)
+    l = len(B)
+    for a in A:
+        if 0 <= a - 1 < l:
+            B[a - 1] = a
+    return B.index(0)+1
